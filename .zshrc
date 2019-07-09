@@ -3,28 +3,22 @@ HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 unsetopt beep
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/terao/.zshrc'
 
-# End of lines added by compinstall
+### Added by Zplugin's installer
+source '/home/terao/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
 
-source ~/.zplug/init.zsh
+zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
+zplugin ice src"shell/key-bindings.zsh"; zplugin load junegunn/fzf
 
-zplug "yous/vanilli.sh"
-zplug "zsh-users/zsh-completions"
+zplugin snippet OMZ::lib/git.zsh
+zplugin snippet 'OMZ::plugins/git/git.plugin.zsh'
 
-zplug "yous/lime"
+zplugin cdclear -q
+setopt promptsubst
 
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
-zplug "junegunn/fzf", as:plugin, use:shell/key-bindings.zsh
 
-alias ls="ls --color"
-export LESS="-R"
+zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 
-autoload -Uz compinit
-compinit
-
-zplug load 
