@@ -19,6 +19,14 @@ zplugin snippet 'OMZ::plugins/git/git.plugin.zsh'
 zplugin cdclear -q
 setopt promptsubst
 
+alias ls="ls --color"
+
+export LESS="-R"
+
+zplugin ice wait'!0'; zplugin load zsh-users/zsh-completions
 
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+
+autoload -U compinit
+compinit
 
