@@ -3,3 +3,16 @@
 	name = terao
 [core]
 	editor = vim
+[ghq]
+	root = /home/terao/src
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	log = head -n 50
+[merge]
+	tool = vscode
+[mergetool]
+	prompt = false
+	keepBackup = false
+[mergetool "vscode"]
+	cmd = /usr/bin/code \"$MERGED\"
+	trustExitCode = false
