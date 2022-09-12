@@ -6,7 +6,6 @@
 	git
 	zsh
 	tmux
-	tig
 	barrier
 	bat
 	tree
@@ -17,11 +16,20 @@
 	subversion
 	du-dust
 	nodejs
-	yarn
 	fd
 	gitAndTools.diff-so-fancy
 	hexyl
 	htop
+	iperf3
+	gitui
+	nmap
+	shfmt
+	python39
+	python39Packages.pip
+	python39Packages.poetry
+	zlib
+	gtkwave
+	exa
       ];
     };
   };

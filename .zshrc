@@ -37,6 +37,8 @@ bindkey "^[[3~" delete-char
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
+stty -ixon
+
 # nix
 if [ -e /home/terao/.nix-profile/etc/profile.d/nix.sh ]; then . /home/terao/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
@@ -57,12 +59,27 @@ alias setvivado="source /opt/Xilinx/Vivado/2017.2/settings64.sh"
 alias setvivado14="source /opt/Xilinx/Vivado/2014.4/settings64.sh"
 alias setvivado18="source /opt/Xilinx/Vivado/2018.3/settings64.sh"
 alias setvivado19="source /opt/Xilinx/Vivado/2019.2/settings64.sh"
+alias setvivado20="source /opt/Xilinx/Vivado/2020.2/settings64.sh"
+
+alias setmodelsim="source ~/modelsim/modelsim_dlx/settings.sh"
 
 # git aliases
 alias gst="git status -sb"
 alias gco="git checkout"
 alias ga="git add"
 alias gd="git diff"
+
+alias ls="ls --color"
+
+# path
+export PATH="$PATH:~/bin/3dslicer:~/.local/bin"
+#alias setriv="source ~/Aldec/Riviera-PRO-2021.04-x64/etc/setenv"
+#alias setriv="source ~/Aldec/Riviera-PRO-2021.10-x64/etc/setenv"
+alias setriv="source ~/Aldec/Riviera-PRO-2022.04-x64/etc/setenv"
+
+export ALDEC_LICENSE_FILE=27009@172.16.100.2
+
+export ZSH="/home/terao/.nix-profile/bin/zsh"
 
 source ~/dotfiles/.zsh/git-fzf/functions.sh
 source ~/dotfiles/.zsh/git-fzf/key-binding.zsh
