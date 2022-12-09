@@ -28,8 +28,11 @@ bindkey -e
 
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light intelfx/pure
 
-zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
-zplugin ice src"shell/key-bindings.zsh"; zplugin load junegunn/fzf
+#zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf-bin
+#zplugin ice from"gh-r" as"program"; zplugin load junegunn/fzf
+#zplugin ice src"shell/key-bindings.zsh"; zplugin load junegunn/fzf
+
+zinit pack"binary+keys" for fzf
 
 zinit ice wait'0' blockf; zinit light "b4b4r07/enhancd"
 
