@@ -1,9 +1,15 @@
 {
+  git = {
+    svnSupport = true;
+  }; 
+
+
   packageOverrides = pkgs: with pkgs; {
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
 	git
+	subversion
 	zsh
 	tmux
 	barrier
@@ -15,7 +21,6 @@
 	ueberzug
 	subversion
 	du-dust
-	nodejs
 	fd
 	gitAndTools.diff-so-fancy
 	hexyl
@@ -25,12 +30,16 @@
 	nmap
 	shfmt
 	python39
-	python39Packages.pip
-	python39Packages.poetry
-	zlib
+	poetry
 	gtkwave
-	exa
+	zlib
+	eza
+	git-fame
       ];
     };
+  };
+
+  programs.zsh = {
+    enable = true;
   };
 }

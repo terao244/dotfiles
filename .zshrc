@@ -66,6 +66,7 @@ alias setvivado14="source /opt/Xilinx/Vivado/2014.4/settings64.sh"
 alias setvivado18="source /opt/Xilinx/Vivado/2018.3/settings64.sh"
 alias setvivado19="source /opt/Xilinx/Vivado/2019.2/settings64.sh"
 alias setvivado20="source /opt/Xilinx/Vivado/2020.2/settings64.sh"
+alias setvivado21="source /opt/Xilinx/Vivado/2021.2/settings64.sh"
 
 alias setmodelsim="source ~/modelsim/modelsim_dlx/settings.sh"
 
@@ -75,7 +76,9 @@ alias gco="git checkout"
 alias ga="git add"
 alias gd="git diff"
 
-alias ls="ls --color"
+#alias ls="ls --color"
+alias ls="eza"
+alias ll="eza -l --icons"
 
 # path
 export PATH="$PATH:~/bin/3dslicer:~/.local/bin"
@@ -89,3 +92,9 @@ export ZSH="/home/terao/.nix-profile/bin/zsh"
 
 source ~/dotfiles/.zsh/git-fzf/functions.sh
 source ~/dotfiles/.zsh/git-fzf/key-binding.zsh
+
+if [ -n "$IN_NIX_SHELL" ]; then
+	export PS1="(nix-shell) $PS1"
+fi
+
+source "$HOME/.rye/env"
